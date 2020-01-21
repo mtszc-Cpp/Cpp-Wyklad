@@ -1,0 +1,29 @@
+/*
+2. W main() napisz program, który w tablicy dwuwymiarowej zapisze wyniki mno¿enia z „tabliczki
+mno¿enia” (od 1 do 9). Nastêpnie wydrukuj na ekran zawartoœæ tablicy z zachowaniem wierszy i
+kolumn.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int N = 9;
+    int tablica [N][N];
+    int szerokosc = 4;
+
+    for(int i=1;i<=N;i++){
+        for(int j=1;j<=N;j++){
+            tablica[i-1][j-1]=i*j;
+        }
+    }
+
+    for(int i=1;i<=N;i++){
+        for(int j=1;j<=N;j++){
+            cout.width(szerokosc); cout<<tablica[i-1][j-1];
+        }
+        cout<<endl;
+    }
+    return 0;
+}
