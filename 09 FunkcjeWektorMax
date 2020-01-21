@@ -1,0 +1,36 @@
+/*
+9. Napisz uniwersaln¹ funkcjê, która otrzyma w argumencie adres do wektora z liczbami typu
+ca³kowitego. Funkcja ta ma za zadania zwróciæ maksymaln¹ liczbê znalezion¹ w wektorze.
+Zabezpiecz wektor w argumencie przed przypadkowymi zmianami wartoœci w funkcji.
+*/
+
+#include <iostream>
+#include <vector>
+#include <time.h>
+#include <cstdlib>
+
+using namespace std;
+
+int wektorMax(const vector <int> &wek){
+    int maksymalna = 0;
+    for(int i=0; i<wek.size(); i++){
+        if(wek.at(i)>maksymalna){
+            maksymalna = wek.at(i);
+        }
+    }
+    return maksymalna;
+}
+
+int main(){
+    int N = 10;
+    vector <int> wektor(N);
+    srand(time(NULL));
+    for(int i=0; i<N;i++){
+        wektor.at(i) = rand()%11;
+    }
+    for(int i=0; i<N;i++){
+        cout<<"Wektor["<<i<<"]: "<<wektor.at(i)<<endl;
+    }
+    cout<<wektorMax(wektor);
+    return 0;
+}
