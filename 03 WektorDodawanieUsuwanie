@@ -1,0 +1,35 @@
+/*
+3. W main() zdefiniuj pusty wektor i dopisz do niego piêæ naturalnych liczb pobranych z klawiatury
+z zakresu od 1 do 20. Zabezpiecz proces wpisywania przed omy³kowym podaniem liczby spoza
+zakresu. Wyœwietl rozmiar wektora oraz wartoœci elementów. Nastêpnie spowoduj, ¿e wektor
+ponownie bêdzie pusty i upewnij siê, ¿e ci siê to uda³o wykonuj¹c odpowiedni test.
+*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main(){
+    int N = 5;
+    vector <int> wektor;
+    for(int i=0; i<N;i++){
+        int j = 0;
+        cout<<"Podaj element wektora z przedzialu od 0 do 20. Wektor["<<i<<"]: ";
+        cin >> j;
+        while(0>j || j>20){
+            cout<<"Podales wartosc spoza zakresu."<<endl;
+            cout<<"Podaj element wektora z przedzialu od 0 do 20. Wektor["<<i<<"]: ";
+            cin >> j;
+        }
+        wektor.push_back(j);
+    }
+
+    cout <<"Rozmiar wektora: "<<wektor.size()<<endl;
+    for(int i=0; i<N;i++){
+        cout<<"Wektor["<<i<<"]: "<<wektor.at(i)<<endl;
+    }
+    wektor.clear();
+
+    cout<<"Rozmiar wektora: "<<wektor.size()<<endl;
+}
