@@ -1,0 +1,26 @@
+/*
+11. Napisz w³asn¹ funkcjê zliczaj¹c¹ du¿e litery w tablicy char przekazanej w argumencie.
+Zabezpiecz tablicê przed omy³kow¹ zmian¹ wartoœci.
+*/
+
+#include <iostream>
+#include <string.h>//strlen
+
+using namespace std;
+
+int duzeLitery(char word []){
+    int licznik = 0;
+    for(int i=0; i<strlen(word); i++){
+        if(65<=word[i] && word[i]<=90){
+            licznik ++;
+        }
+    }
+    return licznik;
+}
+
+int main(){
+    char slowo [] = "MaddDDD";
+    cout<<slowo<<endl;
+    cout<<"Liczba duzych liter: "<<duzeLitery(slowo)<<endl;
+    return 0;
+}
