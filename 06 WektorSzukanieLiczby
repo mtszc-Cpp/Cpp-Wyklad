@@ -1,0 +1,37 @@
+/*
+6. Napisz uniwersaln¹ funkcjê dzia³aj¹c¹ dla wektora w argumencie. Przeka¿ dodatkow¹ liczbê w
+argumencie. Funkcja ma za zadania zwróciæ liczbê wyst¹pieñ zadanej liczby w wektorze. Jeœli
+liczba nie wystêpuje w wektorze funkcja ma zwróciæ zero.
+*/
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <time.h>
+
+using namespace std;
+
+int wyszukiwanie(vector <int> wek, int szukana){
+    int licznik = 0;
+    for(int i=0; i<wek.size();i++){
+        if(wek.at(i)==szukana){
+            licznik++;
+        }
+    }
+    return licznik;
+}
+
+int main(){
+    int W = 5;
+    int N = 10;
+    vector <int> wektor(N);
+    srand(time(NULL));
+    for(int i=0; i<N;i++){
+        wektor.at(i) = rand()%11;
+    }
+    for(int i=0; i<N;i++){
+        cout<<"Wektor["<<i<<"]: "<<wektor.at(i)<<endl;
+    }
+    cout << wyszukiwanie(wektor, W);
+    return 0;
+}
