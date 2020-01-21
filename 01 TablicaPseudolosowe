@@ -1,0 +1,22 @@
+/*
+1. W main() napisz program, który w tablicy jednowymiarowej umieœci dziesiêæ liczb
+pseudolosowych w wybranym zakresie i wyœwietli je w jednym wierszu – przedzielonych
+wybranym znakiem.
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <time.h>
+
+using namespace std;
+
+int main(){
+    int N =10;
+    int tablica[N];
+    srand(time(NULL));
+    for(int i=0; i<N; i++){
+        tablica[i] = rand()%101;
+        cout<<tablica[i]<<", ";
+    }
+    return 0;
+}
