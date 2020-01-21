@@ -1,0 +1,21 @@
+/*
+7. Napisz funkcjê, która otrzyma w argumencie trzy wartoœci ca³kowite, z czego dwa argumenty
+powinny mieæ wartoœci domyœlne. Funkcja powinna zwracaæ sumê wszystkich liczb w argumencie.
+Zademonstruj wszystkie mo¿liwe warianty wywo³ania swojej funkcji z funkcji main().
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int sumowanie(int d, int e = 5, int f=5){
+    int suma = d + e + f;
+    return suma;
+}
+
+int main(){
+    cout << sumowanie(5,10,15)<<endl;
+    cout << sumowanie(5,10)<<endl;
+    cout << sumowanie(5)<<endl;
+    return 0;
+}
