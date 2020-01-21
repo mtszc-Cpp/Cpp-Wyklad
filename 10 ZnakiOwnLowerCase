@@ -1,0 +1,28 @@
+/*
+10. Napisz w³asn¹ funkcjê zmieniaj¹c¹ litery ma³e na du¿e w zmiennej string przekazanej w
+argumencie. Funkcja powinna zwróciæ liczbê dokonanych zmian.
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int duzeLitery(string &word){
+    int licznik = 0;
+    for(int i=0; i<word.length(); i++){
+        if(97<=word[i] && word[i]<=122){
+            word[i] = word[i]-32;
+            licznik ++;
+        }
+    }
+    return licznik;
+}
+
+int main(){
+    string slowo = "Mbadcvi";
+    cout<<slowo<<endl;
+    cout<<"Liczba zamienionych liter: "<<duzeLitery(slowo)<<endl;
+    cout<<slowo;
+    return 0;
+}
