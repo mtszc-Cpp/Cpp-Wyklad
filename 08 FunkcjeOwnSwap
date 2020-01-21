@@ -1,0 +1,37 @@
+/*
+8. Napisz funkcjê, która w argumencie otrzyma tablicê z liczbami ca³kowitymi oraz dwa indeksy.
+Funkcja ma wykonaæ zamianê miejscami dwóch wskazanych elementów na podobieñstwo funkcji
+swap (bez u¿ycia funkcji swap).
+*/
+
+#include <iostream>
+#include <time.h>
+#include <cstdlib>
+
+using namespace std;
+
+void zamienMiejscami(int tab[], int a, int b){
+    int bufor = tab[b];
+    tab[b] = tab[a];
+    tab[a] = bufor;
+}
+
+int main(){
+    int index1 = 3;
+    int index2 = 5;
+    int N = 6;
+    int tablica[N];
+    srand(time(NULL));
+    for(int i=0; i<N;i++){
+        tablica[i] = rand()%11;
+    }
+    for(int i=0; i<N;i++){
+        cout<<"Tabica ["<<i<<"]: "<<tablica[i]<<endl;
+    }
+    cout<<endl;
+    zamienMiejscami(tablica, index1, index2);
+    for(int i=0; i<N;i++){
+        cout<<"Tabica ["<<i<<"]: "<<tablica[i]<<endl;
+    }
+    return 0;
+}
