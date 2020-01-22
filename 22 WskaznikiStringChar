@@ -1,0 +1,32 @@
+/*
+22. Napisz funkcjê, która w argumencie otrzyma adres do zmiennej typu string i zwróci zwyk³y
+wskaŸnik na now¹/dynamiczn¹ tablicê char o najmniejszym mo¿liwym rozmiarze do
+przechowywania ci¹gu znaków skopiowanych z argumentu. Zadbaj o usuniêcie rezerwacji we
+w³aœciwym momencie.
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+char* zamiana(string &nap){
+    char* wsk = new char [nap.length()];
+    int i=0;
+    while(nap[i]){
+        wsk[i]=nap[i];
+        i++;
+    }
+    return wsk;
+}
+
+int main(){
+    string napis = "akcnbadobkandoib";
+    char* wsk = new char[napis.length()];
+    wsk = zamiana(napis);
+    for (int i=0; i<napis.length(); i++){
+        cout<<wsk[i];
+    }
+    delete [] wsk;
+    return 0;
+}
