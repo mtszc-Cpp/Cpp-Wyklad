@@ -1,0 +1,29 @@
+/*
+17. Zdefiniuj strukturê student ze sk³adnikami: album, wydzia³, kierunek i semestr. W funkcji
+main() powo³aj strukturê typu student i wype³nij treœci¹ z w³asnymi danymi. Napisz funkcjê do
+wyœwietlania na ekranie struktury, która w argumencie dostanie adres na strukturê student i
+wyœwietli strukturê w sposób sformatowany z u¿yciem manipulatorów dla cout. Zabezpiecz
+strukturê przed omy³kow¹ zmian¹ wartoœci sk³adników wewn¹trz funkcji.
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct student{
+    int album, semestr;
+    string wydzial, kierunek;
+
+};
+
+void wyswietl(const student &s){
+    cout.width(30);
+    cout<<s.album<<endl;
+    cout.width(30);
+    cout<<s.kierunek<<endl;
+    cout.width(30);
+    cout<<s.semestr<<endl;
+    cout.width(30);
+    cout<<s.wydzial<<endl;
+}
