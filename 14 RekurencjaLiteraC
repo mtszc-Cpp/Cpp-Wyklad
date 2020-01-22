@@ -1,0 +1,41 @@
+/*
+14. Narysuj rekurencyjnie literê C utworzon¹ z zadanych w argumencie funkcji znaków, np. ‘*’ o
+zadanej wysokoœci i obliczonej szerokoœci równej po³owie wysokoœci.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+void litera(int wys, char znak, int holder){
+    if(wys==holder){
+        for(int i=0; i<wys/2-1; i++){
+            cout<<znak;
+        }
+    }
+    else{
+        cout<<znak<<endl;
+    }
+    if(wys>1){
+        litera(wys-1, znak, holder);
+    }
+    else{
+        for(int i=0; i<holder/2; i++){
+            cout<<znak;
+        }
+        cout<<endl;
+    }
+}
+
+int main(){
+    int wys = 0;
+    char znak = '*';
+    for(;;){
+        cout<<"Podaj parzysta wysokosc litery C (od 4 do 50), nacisnij 0, zeby zakonczyc: ";
+        cin>>wys;
+        if(!wys)break;
+        int holder = wys;
+        litera(wys, znak, holder);
+    }
+    return 0;
+}
