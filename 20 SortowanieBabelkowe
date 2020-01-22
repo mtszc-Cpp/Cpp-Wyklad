@@ -1,0 +1,50 @@
+/*
+20. Napisz funkcjê, która w argumencie bêdzie mia³a tablicê z liczbami ca³kowitymi oraz inne
+niezbêdne argumenty. Funkcja ma wykonaæ sortowanie liczb metod¹ b¹belkow¹ (nie u¿ywaj
+gotowych funkcji bibliotecznych, np. sort). Funkcja powinna zwracaæ liczbê wszystkich
+wykonanych operacji dominuj¹cych w sortowaniu.
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <time.h>
+
+using namespace std;
+
+void sortuj(int tab[], int N, int &por, int &zam){
+	for(int i=0;i<N;i++){
+		for(int j=1;j<N-i;j++){
+            if(tab[j]<tab[j-1]){
+                int bufor;
+                bufor = tab[j-1];
+                tab[j-1] =tab[j];
+                tab[j]=bufor;
+                zam++;
+            }
+            por ++;
+        }
+    }
+}
+
+int main(){
+    int porownania = 0;
+    int zamiany = 0;
+    int N = 10;
+    int tablica [N];
+    srand(time(NULL));
+    for(int i=0; i<N;i++){
+        tablica[i] = rand()%11;
+    }
+    for(int i=0; i<N;i++){
+        cout<<"Tablica["<<i<<"]: "<<tablica[i]<<endl;
+    }
+    cout<<endl;
+    sortuj(tablica, N, porownania, zamiany);
+    for(int i=0; i<N;i++){
+        cout<<"Tablica["<<i<<"]: "<<tablica[i]<<endl;
+    }
+    cout<<endl;
+    cout<<"Liczba porownan: "<<porownania<<endl;
+    cout<<"Liczba zamian: "<<zamiany<<endl;
+    return 0;
+}
