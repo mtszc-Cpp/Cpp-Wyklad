@@ -1,0 +1,29 @@
+/*
+18. Zdefiniuj strukturê zespol do przechowywania liczb zespolonych ze zmiennoprzecinkow¹
+wartoœci¹ rzeczywist¹ i urojon¹. Reszta analogicznie jak w zadaniu 17.
+*/
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+struct zespol{
+    float r, i;
+};
+
+void wyswietl(const zespol &z){
+    cout<<"Czesc rzeczywista: ";
+    cout.width(10);
+    cout<<setprecision(3)<<z.r<<endl;
+    cout<<"Czesc urojona: ";
+    cout.width(14);
+    cout<<setprecision(3)<<z.i<<endl;
+}
+
+int main(){
+    zespol zespolona1 = {2.51, 1.17};
+    wyswietl(zespolona1);
+    return 0;
+}
