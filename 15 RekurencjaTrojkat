@@ -1,0 +1,43 @@
+/*
+15. Narysuj rekurencyjnie trójk¹t prostok¹tny (tylko obwód) o zadanej wysokoœci i podstawie przy
+u¿yciu znaków ‘|’, ‘\’ i ‘_’. Pionowa przyprostok¹tna mo¿e byæ umieszczona przy lewej krawêdzi
+ekranu.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+void litera(int wys, int holder){
+    if(wys==holder){
+        cout<<"|\\"<<endl;
+    }
+    else{
+        cout<<'|';
+        for(int i=0; i<holder-wys; i++){
+            cout<<' ';
+        }
+        cout<<'\\'<<endl;
+    }
+    if(wys>1){
+        litera(wys-1, holder);
+    }
+    else{
+        for(int i=0; i<holder+1; i++){
+            cout<<'_';
+        }
+        cout<<endl;
+    }
+}
+
+int main(){
+    int wys = 0;
+    for(;;){
+        cout<<"Podaj wysokosc trojkata (liczba calkowita), nacisnij 0, zeby zakonczyc: ";
+        cin>>wys;
+        if(!wys)break;
+        int holder = wys;
+        litera(wys, holder);
+    }
+    return 0;
+}
