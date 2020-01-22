@@ -1,0 +1,21 @@
+/*
+16. Policz metod¹ rekurencyjn¹ sumê wartoœci wszystkich cyfr, z których sk³ada siê liczba zadana
+w argumencie funkcji.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int suma(int n){
+    if (n == 0)
+       return 0;
+    return (n%10 + suma(n/10));
+}
+
+int main(){
+    int n = 12345;
+    int result = suma(n);
+    cout<<result;
+    return 0;
+}
