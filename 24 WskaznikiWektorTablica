@@ -1,0 +1,31 @@
+/*
+24. Napisz funkcjê, która w argumencie otrzyma adres do wektora z liczbami ca³kowitymi i zwróci
+zwyk³y wskaŸnik na now¹/dynamiczn¹ tablicê int do przechowania liczb skopiowanych z
+argumentu. Zadbaj o usuniêcie rezerwacji we w³aœciwym momencie.
+*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int* zamiana(vector<int> &wek){
+    int* tab = new int [wek.size()];
+    int i=0;
+    while(i<wek.size()){
+        tab[i]=wek.at(i);
+        i++;
+    }
+    return tab;
+}
+
+int main(){
+    vector<int> wektor(5,5);
+    int* tablica = new int [wektor.size()];
+    tablica = zamiana(wektor);
+    for (int i=0; i<5; i++){
+        cout<<tablica[i]<<endl;
+    }
+    delete [] tablica;
+    return 0;
+}
