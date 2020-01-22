@@ -1,0 +1,27 @@
+/*
+19. Napisz program z u¿yciem unii o nazwie sezam z trzema sk³adnikami: int, double oraz zespol,
+W funkcji main() zademonstruj prawid³owe przypadki u¿ycia unii dla ka¿dego z jej sk³adników.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+struct zespol{
+    float r, i;
+};
+
+union sezam{
+    int a;
+    double b;
+    zespol c;
+};
+
+int main(){
+    sezam sez1;
+    sez1.c.r = 1.51;
+    sez1.c.i = 1.17;
+    cout<<sez1.c.r<<endl;
+    cout<<sez1.c.i<<endl;
+    return 0;
+}
