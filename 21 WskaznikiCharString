@@ -1,0 +1,28 @@
+/*
+21. Napisz funkcjê, która w argumencie otrzyma tablicê z ci¹giem znaków char i zwróci zwyk³y
+wskaŸnik na now¹/dynamiczn¹ zmienn¹ typu string z ci¹giem znaków skopiowanych z argumentu.
+Zadbaj o usuniêcie rezerwacji pamiêci we w³aœciwym momencie.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+string* zamiana(char nap []){
+    string* wsk = new string;
+    int i=0;
+    while(nap[i]){
+        wsk->push_back(nap[i]);
+        i++;
+    }
+    return wsk;
+}
+
+int main(){
+    char napis [] = "aefdzbvag";
+    string* wsk = new string;
+    wsk = zamiana(napis);
+    cout<<*wsk<<endl;
+    delete wsk;
+    return 0;
+}
